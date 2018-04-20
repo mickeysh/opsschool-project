@@ -1,0 +1,10 @@
+ingress:
+  enabled: true
+  path: /
+  hosts:
+    - spree.test.mickey-kubernetes.com
+hpa:
+  enabled: true
+  maxreplicas: 10
+  minreplicas: 2
+  targetCPUUtilizationPercentage: 50

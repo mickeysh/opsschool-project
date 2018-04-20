@@ -1,0 +1,24 @@
+alertmanager:
+  ingress: 
+    enabled: true
+    hosts: 
+      - alertmanager.test.mickey-kubernetes.com
+    persistentVolume:
+      size: 500Gi
+pushgateway:
+  ingress: 
+    enabled: true
+    hosts: 
+      - pushgateway.test.mickey-kubernetes.com
+server:
+  ingress: 
+    enabled: true
+    hosts: 
+      - server.test.mickey-kubernetes.com
+    persistentVolume:
+      size: 500Gi
+serverFiles:
+  prometheus.yml:
+    global:
+      scrape_interval: 15s
+      evaluation_interval: 15s

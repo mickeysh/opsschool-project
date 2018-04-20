@@ -1,0 +1,5 @@
+rbac:
+  create: true
+elasticsearch:
+  host: elastic-search-elasticsearch-client
+  port: 9200

@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: spree
+  namespace: spree
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+  labels:
+    app: spree
+spec:
+  rules:
+  - host: spree.test.mickey-kubernetes.com
+    http:
+      paths:
+      - backend:
+          serviceName: spree
+          servicePort: 80
+        path: /

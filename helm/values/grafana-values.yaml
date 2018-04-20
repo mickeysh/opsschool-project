@@ -1,0 +1,22 @@
+server:
+  adminUser: admin
+  ingress:
+    enabled: true
+    hosts:
+      - grafana.test.mickey-kubernetes.com
+    annotations:
+      kubernetes.io/ingress.class: nginx
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources: 
+    - name: Prometheus
+      type: prometheus
+      url: http://promethus-prometheus-server.kube-system.svc.cluster.local
+      access: proxy
+      isDefault: true
+dashboards:
+  kubernetes-prometheus:
+    gnetId: 1621
+    revision: 1
+    datasource: Prometheus

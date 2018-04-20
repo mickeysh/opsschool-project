@@ -1,0 +1,20 @@
+{{- if .Values.hpa.enabled -}}
+{{- $fullName := include "spree.fullname" . -}}
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app: {{ template "spree.name" . }}
+    chart: {{ template "spree.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  maxReplicas: {{ .Values.hpa.maxreplicas }}
+  minReplicas: {{ .Values.hpa.minreplicas }}
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: {{ $fullName }}
+  targetCPUUtilizationPercentage: {{ .Values.hpa.targetCPUUtilizationPercentage }}
+{{- end }}

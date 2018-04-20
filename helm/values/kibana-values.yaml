@@ -1,0 +1,9 @@
+image:
+  repository: "docker.elastic.co/kibana/kibana"
+  tag: "5.4.3"
+ingress:
+  enabled: true
+  hosts:
+    - kibana.test.mickey-kubernetes.com
+env:
+  ELASTICSEARCH_URL: http://elastic-search-elasticsearch-client:9200

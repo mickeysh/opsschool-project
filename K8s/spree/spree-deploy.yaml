@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: spree
+  name: spree
+  namespace: spree
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: spree
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: spree
+    spec:
+      containers:
+      - image: spreecommerce/spree
+        imagePullPolicy: Always
+        name: spree
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "100m"
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+

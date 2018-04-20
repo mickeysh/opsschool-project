@@ -1,0 +1,9 @@
+rbac:
+  create: true
+provider: aws
+policy: upsert-only
+domainFilters:
+  - test.mickey-kubernetes.com
+aws:
+  zoneType: public
+txtOwnerId: my-identifier
