@@ -22,7 +22,7 @@ dashboards:
     gnetId: 741
     revision: 1
     datasource: Prometheus
-  kubernetes-deployment:
+  kubernetes-nginx:
     gnetId: 3050
     revision: 1
     datasource: Prometheus
