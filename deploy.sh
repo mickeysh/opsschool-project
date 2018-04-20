@@ -23,4 +23,4 @@ helm install --name=fluentd incubator/fluentd -f helm/values/fluentd-values.yaml
 echo "===logging: deploying kibana==="
 helm install --name=kibana stable/kibana -f helm/values/kibana-values.yaml --namespace=logging
 echo "===spree: deploying spree==="
-helm install --name=spree ./helm/charts/spree -f helm/values/spree-values.yaml --namespace=spree
+helm install --name=spree spree/spree -f helm/values/spree-values.yaml --namespace=spree
