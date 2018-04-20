@@ -15,7 +15,7 @@ spec:
   kubelet:
     enableCustomMetrics: true
   kubeControllerManager:
-    horizontalPodAutoscalerUseRestClients: true
+    horizontalPodAutoscalerUseRestClients: false
   channel: stable
   cloudProvider: aws
   dnsZone: test.mickey-kubernetes.com
