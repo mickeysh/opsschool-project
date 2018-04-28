@@ -15,6 +15,6 @@ configmap:
   host: spree.ce4t98bbt7zi.us-east-1.rds.amazonaws.com
   username: admin
   password: admin123
-images:
+image:
   repository: firedocker/spree
   tag: latest

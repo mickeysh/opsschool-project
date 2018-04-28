@@ -6,6 +6,10 @@ RUN apk add --update \
     tzdata \
     imagemagick
 ADD . /spree
+ENV MYSQL_DATABASE_HOST='' 
+ENV MYSQL_DATABASE_USER_NAME='' 
+ENV MYSQL_DATABASE_PASSWORD='' 
+ENV MYSQL_DATABASE_NAME=''
 WORKDIR /spree
 RUN gem install bundler
 RUN bundle install
