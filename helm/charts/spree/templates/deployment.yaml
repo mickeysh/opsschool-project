@@ -28,6 +28,22 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MYSQL_DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: spree
+                  key: host
+            - name: MYSQL_DATABASE_USER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: spree
+                  key: username
+            - name: MYSQL_DATABASE_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: spree
+                  key: username
           ports:
           - containerPort: 3000
             protocol: TCP

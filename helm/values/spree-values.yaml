@@ -11,3 +11,10 @@ hpa:
 resources:
   requests:
     cpu: "100m"
+configmap:
+  host: spree.ce4t98bbt7zi.us-east-1.rds.amazonaws.com
+  username: admin
+  password: admin123
+images:
+  repository: firedocker/spree
+  tag: latest

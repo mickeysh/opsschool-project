@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spree
+data:
+  host: {{ .Values.configmap.host }}
+  username: {{ .Values.configmap.username }}
+  password: {{ .Values.configmap.password }}

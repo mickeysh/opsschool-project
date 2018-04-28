@@ -1,0 +1,13 @@
+FROM ruby:2.4-alpine3.6
+RUN apk add --update \
+    build-base \
+    mariadb-dev \
+    nodejs \
+    tzdata \
+    imagemagick
+ADD . /spree
+WORKDIR /spree
+RUN gem install bundler
+RUN bundle install
+EXPOSE 3000
+ENTRYPOINT rails server
