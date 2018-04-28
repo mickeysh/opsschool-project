@@ -43,7 +43,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: spree
-                  key: username
+                  key: password
           ports:
           - containerPort: 3000
             protocol: TCP

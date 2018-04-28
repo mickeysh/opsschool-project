@@ -3,11 +3,11 @@ entries:
   spree:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-04-28T17:00:55.607666+03:00
+    created: 2018-04-28T17:10:38.618801+03:00
     description: A Helm chart for Kubernetes
-    digest: 6249d66f7578f2b2ba7e464f42df31c38d4727fdd1ca4615a3bd1e3bd31a5735
+    digest: b939eb9f62c64bca5343183e16a66cb569d7aca62c272e8fbdc9cd475cd78269
     name: spree
     urls:
     - spree-0.1.0.tgz
     version: 0.1.0
-generated: 2018-04-28T17:00:55.606882+03:00
+generated: 2018-04-28T17:10:38.618085+03:00
