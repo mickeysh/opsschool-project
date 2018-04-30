@@ -19,7 +19,7 @@ helm install --name=grafana stable/grafana -f helm/values/grafana-values.yaml --
 echo "===logging: deploying elasticsearch==="
 helm install --name=elastic-search incubator/elasticsearch -f helm/values/elasticsearch-values.yaml --namespace=logging
 echo "===logging: deploying fluentd==="
-helm install --name=fluentd incubator/fluentd -f helm/values/fluentd-values.yaml --namespace=logging
+helm install --name=fluentd incubator/fluentd-elasticsearch -f helm/values/fluentd-values.yaml --namespace=logging
 echo "===logging: deploying kibana==="
 helm install --name=kibana stable/kibana -f helm/values/kibana-values.yaml --namespace=logging
 echo "===spree: deploying spree==="
